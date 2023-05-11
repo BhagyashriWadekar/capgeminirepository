@@ -1,0 +1,253 @@
+1.Create 10 folders
+
+for($i=0;$i -lt 10;$i++)
+{
+New-Item -Path $a -ItemType Directory;
+}
+
+2.Create 10 files
+
+for($j=0;$j -lt 10;$j++){
+
+New-Item -Path b$j.txt -ItemType File;
+
+}
+
+
+
+3.Create 10 folders inside the folders created in step 2
+for($i=0;$i -lt 10;$i++)
+{
+for($j=0;$j -lt 10;$j++){
+
+New-Item -Path  bhagya$j/folder$i -ItemType Directory;
+}
+}
+
+
+
+4.Create 10 files in the 10 folders created in step 3
+
+for($i=0;$i -lt 10;$i++)
+{
+for($j=0;$j -lt 10;$j++){
+for($k=0;$k -lt 10;$k++){
+
+New-Item -Path  bhagya$i/folder$j/file$k'.txt' -ItemType File;
+}
+}
+}
+
+
+5. Copy 10 files to each of 10 folders
+
+for($i=0;$i -lt 10;$i++)
+{
+for($j=0;$j -lt 10;$j++){
+
+Copy-Item b$i.txt bhagya$j;
+
+}
+}
+
+
+
+
+6. Remove all the files from the folders
+
+for($i=0;$i -lt 10;$i++){
+
+
+Remove-Item bhagya$i;
+
+}
+
+
+
+
+1 Create 10 files using while loop
+
+$i=0
+while($i -lt 10)
+{
+New-Item -Path bha$i -ItemType Directory;
+$i++;
+}
+
+
+2.Create 10 folders using while loop
+$i=0
+while($i -lt 10)
+{
+New-Item -Path new$i.txt -ItemType File;
+$i++;
+}
+
+
+3.Create 10 folders inside the folders created in step 2
+$i=0
+while($i -lt 10)
+{
+$j=0;
+while($j -lt 10)
+{
+New-Item -Path bha$i/newinf$j -ItemType Directory;
+$j++;
+}
+$i++;
+}
+
+
+4.Create 10 files in the 10 folders created in step 3
+
+$i=0
+while($i -lt 10)
+{
+$j=0;
+while($j -lt 10)
+{
+$k=0;
+while($k -lt 10){
+New-Item -Path bha$i/newfolder$j/f$k.txt -ItemType File;
+$k++;
+}
+$j++;
+}
+$i++;
+}
+
+
+5.Copy 10 files to each of 10 folders
+$i=0
+while($i -lt 10)
+{
+$j=0;
+while($j -lt 10)
+{
+$k=0;
+while($k -lt 10){
+Copy-Item new$i.txt  bha$j/newfolder$k;
+$k++;
+}
+$j++;
+}
+$i++;
+}
+
+
+
+6.Remove all the files from the folders
+$i=0
+while($i -lt 10)
+{
+$j=0;
+while($j -lt 10)
+{
+$k=0;
+while($k -lt 10){
+Remove-Item bha$i/newfolder$j/*.txt;
+$k++;
+}
+$j++;
+}
+$i++;
+}
+
+
+Using do while
+1.
+$i=0
+do{
+
+New-Item -Path bha$i -ItemType Directory;
+$i++;
+}while($i -lt 10)
+
+
+2.
+$i=0
+do{
+
+New-Item -Path bha$i.txt -ItemType File;
+$i++;
+}while($i -lt 10)
+
+
+
+3.
+$i=0
+$j=0
+
+do
+{
+do
+{
+New-Item -Path bha$i/newfolder$j -ItemType Directory;
+$j++;
+}while($j -lt 10);
+$i++;
+}
+while($i -lt 10);
+
+
+4.
+$i=0
+
+do
+{
+$j=0
+do
+{
+
+$k=0
+do
+{
+New-Item -Path bha$i/newfolder$j/f$k.txt -ItemType File;
+$k++;
+}while($k -lt 10)
+$j++;
+}while($j -lt 10)
+$i++;
+}while($i -lt 10)
+
+
+5.
+$i=0
+
+do
+{
+$j=0
+do
+{
+
+$k=0
+do
+{
+Copy-Item new$i.txt bha$j/newfolder$k
+$k++;
+}while($k -lt 10)
+$j++;
+}while($j -lt 10)
+$i++;
+}while($i -lt 10)
+
+6.
+
+$i=0
+
+do
+{
+$j=0
+do
+{
+
+$k=0
+do
+{
+Remove-Item  bha$i/newfolder$j/*.txt
+$k++;
+}while($k -lt 10)
+$j++;
+}while($j -lt 10)
+$i++;
+}while($i -lt 10)
